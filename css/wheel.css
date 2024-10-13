@@ -1,0 +1,217 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 15px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  overscroll-behavior-y: contain;
+  position: static;
+  width: 100%;
+  touch-action: none;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* justify-items: stretch;
+  align-items: stretch; */
+ 
+}
+.wheel-wrapper {
+  overflow: hidden;
+  height: 60vh;
+  width: 100%; 
+  transform: translateY(0%); /* adjust as needed */
+
+  /* margin-top: 30%; */
+}
+
+.gui-wrapper {
+  padding: 10px;
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+select {
+  padding: 2px;
+}
+label {
+  margin-right: 5px;
+}
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: #fff;
+}
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #009AC7;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.header {
+  position: relative;
+}
+.np-logo {
+  position: fixed;
+  top: 11%;
+  left: 50;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  height: auto;
+  width: 15vw;
+  z-index: 1001;
+}
+.ultra-logo {
+  position: fixed;
+  top: 11%;
+  left: 50;
+  margin-left:200px;
+  
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  height: 8vw;
+  width: 8vw;
+  z-index: 1001;
+}
+.np1-logo {
+  position: fixed;
+  top: 11%;
+  justify-content:left;
+  align-items: normal;
+  left: 50;
+  margin-left:-200px;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  height: auto;
+  width: 10vw;
+  z-index: 1001;
+}
+
+.button {
+  position: fixed;
+  top: 92%;
+  left: 50;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  height: 50px;
+  width: 50px;
+  z-index: 1001;
+}
+
+
+@media only screen and (min-width:1070px) and (max-width:1200px){
+
+
+  .button{
+    width: 200px;
+    height: 200px;
+    top:88%;
+    
+  }
+  .wheel-wrapper{
+    height:60vh;
+    
+  }
+  
+  .np-logo {
+    position: fixed;
+    top: 11%;
+    left: 50;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    height: 40vw;
+    width: 60vw;
+    z-index: 1001;
+  }
+  .ultra-logo {
+    position: fixed;
+    top: 11%;
+    left: 50;
+    margin-left: -400px;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    height: 15vw;
+    width: 15vw;
+    z-index: 1001;
+  }
+  .np1-logo {
+    position: fixed;
+    top: 11%;
+    left: 50;
+    margin-left: 370px;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    height: 18vw;
+    width: 20vw;
+    z-index: 1001;
+  }
+  
+ 
+}
+@media only screen and (min-width:320px) and (max-width:600px){
+  .np-logo{
+    width:40vw;
+    height:35vw;
+    top:11%;
+  }
+  .np1-logo{
+    margin-left:150px;
+    width: 20vw;
+    height: 15vw;
+  }
+  .ultra-logo{
+    margin-left: -150px;
+    top:11%;
+    width: 15vw;
+    height: 15vw;
+  }
+
+}
+
+@media only screen and (max-width:360px){
+  .ultra-logo{
+    margin-left:-130px;
+  }
+  .np1-logo{
+    margin-left:130px ;
+  }
+  
+  .np-logo{
+    top: 10%;
+  }
+  .ultra-logo{
+    top: 10%;
+  }
+  .np1-logo{
+    top: 10%;
+  }
+}
+

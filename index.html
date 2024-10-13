@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spin Wheel</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/features/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../ResponsiveApp/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="../ResponsiveApp/features.css" rel="stylesheet">
+    <link href="../ResponsiveApp/css/wheel.css" rel="stylesheet">
+
+    <script>
+        window.onload = () => {
+          const quadrants = [
+          {
+      label: "Keychain",
+      backgroundColor: "#ED1F23",
+      labelColor: "#FFFFFF",
+    },
+    {
+      label: "Pen",
+      backgroundColor: "#231F20",
+      labelColor: "#FFFFFF",
+    },
+    {
+      label: "Bag",
+      backgroundColor: "#FFFFFF",
+      labelColor: "#231F20",
+    },
+    
+    {
+      label: "Cup",
+      backgroundColor: "#231F20",
+      labelColor: "#FFFFFF",
+    },
+    {
+      label: "Keychain",
+      backgroundColor: "#ED1F23",
+      labelColor: "#FFFFFF",
+    },
+    {
+      label: "Pen",
+      backgroundColor: "#FFFFFF",
+      labelColor: "#231F20",
+    },
+    {
+      
+      label: "Bag",
+      backgroundColor: "#231F20",
+      labelColor: "#FFFFFF",
+    },
+    
+    {
+      label: "Cup",
+      backgroundColor: "#ED1F23",
+      labelColor: "#FFFFFF",
+    },
+    {
+      label: "Keychain",
+      backgroundColor: "#FFFFFF",
+      labelColor: "#231F20",
+    },
+    {
+      label: "Pen",
+      backgroundColor: "#231F20",
+      labelColor: "#FFFFFF",
+    },
+    {
+      label: "Bag",
+      backgroundColor: "#ED1F23",
+      labelColor: "#FFFFFF",
+    },
+    
+    {
+      label: "Cup",
+      backgroundColor: "#FFFFFF",
+      labelColor: "#231F20",
+    }
+  ];
+  
+          const container = document.querySelector(".wheel-wrapper");
+  
+          const props = {
+            items: quadrants,
+            borderColor: "#A68C5B", // Add the borderColor property
+            borderWidth: 6, // Add the borderWidth property
+            debug: false, // Add the debug property
+            image: "../ResponsiveApp/assets/images/npmiddle.png", // Add the image property
+            isInteractive: true, // Add the isInteractive property
+            itemBackgroundColors: ["#C0150B"], // Add the itemBackgroundColors property
+            itemLabelAlign: "right", // Add the itemLabelAlign property
+            itemLabelBaselineOffset: 0, // Add the itemLabelBaselineOffset property
+            itemLabelColors: ["#ffffff"], // Add the itemLabelColors property
+            itemLabelFont: "sans-serif", // Add the itemLabelFont property
+            itemLabelFontSizeMax: 24, // Add the itemLabelFontSizeMax property
+            itemLabelRadius: 0.9, // Add the itemLabelRadius property
+            itemLabelRadiusMax: 0.2, // Add the itemLabelRadiusMax property
+            itemLabelRotation: 0, // Add the itemLabelRotation property
+            itemLabelStrokeColor: "#fff", // Add the itemLabelStrokeColor property
+            itemLabelStrokeWidth: 0.05, // Add the itemLabelStrokeWidth property
+            lineColor: "#A68C5B", // Add the lineColor property
+            lineWidth: 6, // Add the lineWidth property
+            radius: .88, // Add the radius property
+            rotation: 210, // Add the rotation property
+            rotationResistance: -35, // Add the rotationResistance property
+            rotationSpeed: 0, // Add the rotationSpeed property
+            rotationSpeedMax: 250, // Add the rotationSpeedMax property
+            offset: { w: 0, h: 0 }, // Add the offset property
+            overlayImage: "../ResponsiveApp/assets/images/npframe2.png", // Add the overlayImage property
+            pointerAngle: 0, // Add the pointerAngle property
+          };
+  
+          window.wheel = new spinWheel.Wheel(container, props);
+  
+          // Define a function to open the selected link
+          function openSelectedLink(selectedItemIndex) {
+            const selectedLink = quadrants[selectedItemIndex].link;
+            window.open(selectedLink, "_self"); //blank for a new tab
+          }
+  
+          // Define a callback for the onRest event to show a pop-up before opening the link
+          wheel.onRest = (event) => {
+            const selectedItemIndex = event.currentIndex;
+            const selectedLabel = quadrants[selectedItemIndex].label;
+            // Show a pop-up with the label for 2 seconds
+            // alert(`Quiz Category: ${selectedLabel}`);
+            // After 2 seconds, open the selected link
+            setTimeout(() => {
+              openSelectedLink(selectedItemIndex);
+            }, 1000); // Delayed opening of the link after 5 seconds
+          };
+        };
+      </script>
+
+
+</head>
+  <body>
+    
+
+<main>
+
+
+  <div class="container px-4" id="featured-3">
+    
+    <div class="row g-4 py-5">
+
+
+      <div class="feature col">
+        <img src="../ResponsiveApp/assets/images/UltraLogo.png" alt="NE Logo" width="200px" height="150px"  />
+       
+      
+      </div>
+      <div class="feature col">
+        <img src="../ResponsiveApp/assets/images/NPlogo.png" alt="NE Logo" width="400px" height="300px" />
+       
+      </div>
+      <div class="feature col">
+        <img src="../ResponsiveApp/assets/images/NPigniteLogo.png" alt="NE Logo" width="250px" height="170px"   />
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container px-4 py-5" id="hanging-icons">
+ 
+      
+    <div class="wheel-wrapper" style="margin-top: -130px;">
+        <!-- <h1 style="color: #FFE5CA; font-size: 7vw; text-align: center; padding-top: 10%; padding-bottom: 0%;">SPIN THE WHEEL</h1> -->
+      </div>
+
+      
+
+  </div>
+
+</main>
+<div class="header">
+  <a href="group1.html"><img src="../ResponsiveApp/assets/images/button.png" alt="NE Logo" class="button" /></a>
+</div>
+
+
+    <script src="../ResponsiveApp/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../ResponsiveApp/js/spin-wheel-iife.js"></script>
+      
+  </body>
+</html>
